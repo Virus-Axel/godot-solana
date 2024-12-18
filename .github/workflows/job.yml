@@ -1,0 +1,16 @@
+name: Example Workflow
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  example_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use Action from Feature Branch
+        uses: Virus-Axel/godot-asset-library-updater-action@feature/automatic_update
+        with:
+            asset_id: 1765
+            username: ${{ secrets.ASSET_STORE_USERNAME }}
+            password: ${{ secrets.ASSET_STORE_PASSWORD }}
